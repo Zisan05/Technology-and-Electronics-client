@@ -1,0 +1,27 @@
+[
+    {
+      "brand": "Xiaomi",
+      "brand_img": "https://i.ibb.co/YLbDTYm/xiaomi-logo-orange-background.jpg"
+    },
+    {
+      "brand": "Apple",
+      "brand_img": "https://i.ibb.co/GxmFkSd/1511456315-653-apple-mobile.jpg"
+    },
+    {
+      "brand": "Samsung",
+      "brand_img": "https://i.ibb.co/SPqBBM7/990590-samsung.webp"
+    },
+    {
+      "brand": "Asus",
+      "brand_img": "https://i.ibb.co/nMXSQz9/download.png"
+    },
+    {
+      "brand": "Realme",
+      "brand_img": "https://i.ibb.co/m51fK9X/download.jpg"
+    },
+    {
+      "brand": "HP",
+      "brand_img": "https://i.ibb.co/QPKcZmw/download.png"
+    }
+  ]
+  

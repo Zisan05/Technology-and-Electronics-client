@@ -1,12 +1,36 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
+
+  const {LogoutUser,user} = useContext(AuthContext)
+
+
+  const handleLogout = () =>{
+    LogoutUser()
+    .then(result => {
+      console.log(result)
+      Swal.fire(
+           'success',
+           'Successfully logout from your account',
+           'success'
+         )
+  })
+  .catch(error => {
+    console.log(error)
+  })
+  
+  }
+
+
     const navItem = <>
     <li><NavLink to = "/">Home</NavLink></li>
-    <li><NavLink to = "/">Add Product</NavLink></li>
+    <li><NavLink to = "/addproduct">Add Product</NavLink></li>
     <li><NavLink to = "/">My Card</NavLink></li>
     <li><NavLink to = "/register">Register</NavLink></li>
-    <li><NavLink to = "/">Login</NavLink></li>
+    <li><NavLink to = "/login">Login</NavLink></li>
     
     </>
     return (
@@ -29,7 +53,10 @@ const NavBar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+        {
+      user ?<div className="md:flex lg:flex  gap-[10px]"><p className="my-auto font-bold text-[15px] ">{user.displayName}</p><img className="h-[50px] w-[50px] rounded-[50%]" src={user.photoURL}></img><button className="btn bg-orange-400" onClick={handleLogout}>Sign out</button></div>  :
+      <button className="btn bg-orange-400"><Link to ={'/login'}>Log in </Link></button>
+    }
         </div>
       </div>
     );

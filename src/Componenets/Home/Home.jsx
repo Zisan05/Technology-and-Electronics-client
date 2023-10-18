@@ -1,6 +1,12 @@
+import { useLoaderData } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import BrandsCard from "../BrandsCard/BrandsCard";
 
 const Home = () => {
+ 
+const data = useLoaderData();
+
+console.log(data);
     return (
        <div>
          <div className="hero h-[400px] " style={{backgroundImage: 'url(https://i.ibb.co/rGx0kxP/Technology-Watch.jpg)'}}>
@@ -13,6 +19,13 @@ const Home = () => {
       
     </div>
   </div>
+</div>
+<h1 className="text-[30px] text-center underline text-orange-500">Our Brands</h1>
+<div className="grid grid-cols-3 gap-[20px] mx-[30px]">
+
+  {
+    data.map(data => <BrandsCard key = {data.id} data = {data}></BrandsCard>)
+  }
 </div>
 
 <Footer></Footer>
