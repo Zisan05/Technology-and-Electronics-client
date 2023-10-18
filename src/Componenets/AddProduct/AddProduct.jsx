@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const AddProduct = () => {
@@ -14,11 +15,29 @@ const AddProduct = () => {
      const rating = form.rating.value;
      const shortDescription = form.shortDescription.value;
 
-     const user = {image,name,brandname,productType,price,rating,shortDescription}
+     const NewUser = {image,name,brandname,productType,price,rating,shortDescription}
 
     
-     console.log(user)
-     
+     console.log(NewUser)
+     fetch('http://localhost:5000/tech',{
+            method:'POST',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(NewUser)
+        })
+        .then(res => res.json())
+        .then (data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    'success',
+                    'Successfully added your Item',
+                    'success'
+                  )
+                  form.reset();
+            }
+        })
     }
     return (
         <div className=" bg-orange-400 min-h-screen">
