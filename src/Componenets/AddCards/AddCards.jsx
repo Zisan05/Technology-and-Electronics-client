@@ -16,7 +16,7 @@ const AddCards = ({data,setProduct,product}) => {
         setProduct(remaining);
         Swal.fire(
           'success',
-          'Successfully added your Item',
+          'Successfully Delete Your Item',
           'success'
         )
       }

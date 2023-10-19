@@ -45,7 +45,7 @@ const NavBar = () => {
             </ul>
           </div>
           <span><img className="w-[50px] h-[50px] rounded-[50%]" src="https://i.ibb.co/DzRS673/digital-tech-vector-business-logo-template-concept-illustration-gear-electronic-factory-sign-cog-whe.png" /></span>
-          <a className="btn btn-ghost normal-case text-xl font-bold">DIGITALTECH</a>
+          <a className="btn btn-ghost normal-case text-xl font-bold text-sky-400">DIGITALTECH</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

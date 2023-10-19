@@ -16,6 +16,7 @@ import AddProduct from './Componenets/AddProduct/AddProduct';
 import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 import ItemDetails from './Componenets/ItemDetails/ItemDetails';
 import AddCard from './Componenets/AddCard/addCard';
+import Privet from './Componenets/Privat/Privet';
 
 // import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproduct",
-        element:<AddProduct></AddProduct>,
+        element:<Privet><AddProduct></AddProduct></Privet>,
       },
       {
         path: "/branddetails/:brandname",
@@ -55,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addcard",
-        element:<AddCard></AddCard>,
+        element:<Privet><AddCard></AddCard></Privet>,
         loader: () => fetch('http://localhost:5000/card')
       }
     ]
