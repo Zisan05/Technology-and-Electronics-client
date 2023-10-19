@@ -20,7 +20,7 @@ console.log(data);
     </div>
   </div>
 </div>
-<h1 className="text-[30px] text-center underline text-orange-500">Our Brands</h1>
+<h1 className="text-[30px] text-center underline text-orange-500 mt-[30px]">Our Brands</h1>
 <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-[20px] mx-[30px]">
 
   {

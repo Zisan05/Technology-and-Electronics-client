@@ -16,7 +16,7 @@ const {_id,image,name,brandname,productType,price,rating,shortDescription} = dat
     <h2 className="card-title">Rating: {rating}/10</h2>
     <p><span className="font-semibold">shortDescription:</span> {shortDescription}</p>
     <Link to = {`/itemdetails/${_id}`}><button className="btn bg-orange-300 px-[90px]">Details</button></Link>
-    <button className="btn bg-orange-300">Update button</button>
+    <Link to ={`/update/${_id}`}><button className="btn bg-orange-300 px-[90px]">Update button</button></Link>
 
 </div>
 </div>

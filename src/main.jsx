@@ -17,6 +17,7 @@ import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 import ItemDetails from './Componenets/ItemDetails/ItemDetails';
 import AddCard from './Componenets/AddCard/addCard';
 import Privet from './Componenets/Privat/Privet';
+import Update from './Componenets/Update/Update';
 
 // import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         path: "/addcard",
         element:<Privet><AddCard></AddCard></Privet>,
         loader: () => fetch('http://localhost:5000/card')
+      },
+      {
+        path: "/update/:id",
+        element:<Update></Update>,
+        loader: ({params}) => fetch(`http://localhost:5000/tech/${params.id}`)
       }
     ]
   },

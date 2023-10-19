@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -9,6 +9,8 @@ const Register = () => {
 const {CreateUser} = useContext(AuthContext);
 
 const [ErrorMsg , setErrorMsg] = useState('') 
+
+const navigate = useNavigate()
 
 
 const handleRegister = e => {
@@ -44,6 +46,7 @@ const handleRegister = e => {
      
    CreateUser(email,password)
    .then(result => {
+    navigate(location?.state ? location.state : "/");
     console.log(result.user)
     Swal.fire(
         'success',
