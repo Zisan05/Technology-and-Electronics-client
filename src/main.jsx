@@ -12,6 +12,12 @@ import Register from './Componenets/Register/Register';
 import AuthProvider from './Componenets/Provider/AuthProvider';
 import Login from './Componenets/Login/Login';
 import AddProduct from './Componenets/AddProduct/AddProduct';
+import BrandsCard from './Componenets/BrandsCard/BrandsCard';
+import BrandDetails from './Componenets/BrandDetails/BrandDetails';
+import ItemDetails from './Componenets/ItemDetails/ItemDetails';
+import AddCard from './Componenets/AddCard/addCard';
+
+// import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 
 
 const router = createBrowserRouter([
@@ -29,12 +35,27 @@ const router = createBrowserRouter([
         element:<AddProduct></AddProduct>,
       },
       {
+        path: "/branddetails/:brandname",
+        element:<BrandDetails></BrandDetails>,
+        loader: () => fetch('http://localhost:5000/tech')
+      },
+      {
+        path: "/itemdetails/:_id",
+        element: <ItemDetails></ItemDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/tech/${params._id}`)
+
+      },
+      {
         path: "/register",
         element: <Register></Register>
       },
       {
         path: "/login",
         element: <Login></Login>
+      },
+      {
+        path: "/addcard",
+        element:<AddCard></AddCard>
       }
     ]
   },

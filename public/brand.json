@@ -1,26 +1,26 @@
 [
     {
-      "brand": "Xiaomi",
+      "brandname": "Xiaomi",
       "brand_img": "https://i.ibb.co/YLbDTYm/xiaomi-logo-orange-background.jpg"
     },
     {
-      "brand": "Apple",
+      "brandname": "Apple",
       "brand_img": "https://i.ibb.co/GxmFkSd/1511456315-653-apple-mobile.jpg"
     },
     {
-      "brand": "Samsung",
+      "brandname": "Samsung",
       "brand_img": "https://i.ibb.co/SPqBBM7/990590-samsung.webp"
     },
     {
-      "brand": "Asus",
+      "brandname": "Asus",
       "brand_img": "https://i.ibb.co/nMXSQz9/download.png"
     },
     {
-      "brand": "Realme",
+      "brandname": "Realme",
       "brand_img": "https://i.ibb.co/m51fK9X/download.jpg"
     },
     {
-      "brand": "HP",
+      "brandname": "HP",
       "brand_img": "https://i.ibb.co/QPKcZmw/download.png"
     }
   ]
