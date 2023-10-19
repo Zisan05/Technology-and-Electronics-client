@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ItemDetails = () => {
@@ -6,6 +7,40 @@ const ItemDetails = () => {
     const loadData = useLoaderData()
 
     const {_id,image,name,brandname,productType,price,rating,shortDescription} = loadData;
+
+    const handleAddCard = () =>{
+          const image = loadData.image
+          const name = loadData.name
+          const brandname = loadData.brandname
+          const productType = loadData.productType
+          const price = loadData.price
+          const rating = loadData.rating
+          const shortDescription = loadData.shortDescription
+         const NewUser = {
+            image,name,brandname,productType,price,rating,shortDescription
+            
+         }
+
+        fetch('http://localhost:5000/card',{
+            method:'POST',
+            headers: {
+                'content-type': "application/json"
+            },
+            body: JSON.stringify(NewUser)
+        })
+        .then(res => res.json())
+        .then (data => {
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire(
+                    'success',
+                    'Successfully added your Item',
+                    'success'
+                  )
+            }
+        })
+        
+    }
     return (
         <div>
             <h1 className="text-[35px] text-center font-bold underline">Details of the item</h1>
@@ -19,7 +54,7 @@ const ItemDetails = () => {
     <h2 className="card-title">Rating: {rating}/10</h2>
     <p><span className="font-semibold">shortDescription:</span> {shortDescription}</p>
 
-    <button className="btn bg-orange-400">Add to my card</button>
+    <button onClick={handleAddCard} className="btn bg-orange-400">Add to my card</button>
    
 
 </div>
