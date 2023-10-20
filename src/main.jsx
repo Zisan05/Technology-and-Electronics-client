@@ -18,6 +18,7 @@ import ItemDetails from './Componenets/ItemDetails/ItemDetails';
 import AddCard from './Componenets/AddCard/addCard';
 import Privet from './Componenets/Privat/Privet';
 import Update from './Componenets/Update/Update';
+import Errorpage from './Componenets/Errorpage/Errorpage';
 
 // import BrandDetails from './Componenets/BrandDetails/BrandDetails';
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Errorpage></Errorpage>,
     children: [
       {
         path: "/",
@@ -62,7 +64,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element:<Update></Update>,
+        element:<Privet><Update></Update></Privet>,
         loader: ({params}) => fetch(`http://localhost:5000/tech/${params.id}`)
       }
     ]

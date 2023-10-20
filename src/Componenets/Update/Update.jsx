@@ -42,10 +42,13 @@ const Update = () => {
        }
 
     const updateData = useLoaderData();
-    const {_id,image,name,brandname,productType,price,rating,shortDescription} = updateData
+    const {_id,image,name,productType,price,rating,shortDescription} = updateData
     return (
         <div>
+           
             <div className=" bg-orange-400 min-h-screen">
+            <h1 className="text-[35px] text-center font-bold text-blue-400 underline 
+            mb-[30px]">Update product </h1>
             <div className="container mx-auto">
                 <form onSubmit={handleUpdateData}>
                     {/* form 1st row */}

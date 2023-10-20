@@ -41,8 +41,9 @@ const AddProduct = () => {
     }
     return (
       <div>
-        <h1 className="text-[30px] text-center underline text-orange-500 mb-[30px]">Add Product</h1>
+        
           <div className=" bg-orange-400 min-h-screen">
+          <h1 className="text-[30px] text-center underline text-blue-400 mb-[30px] font-bold">Add Product</h1>
             <div className="container mx-auto">
                 <form onSubmit={handleAddData}>
                     {/* form 1st row */}

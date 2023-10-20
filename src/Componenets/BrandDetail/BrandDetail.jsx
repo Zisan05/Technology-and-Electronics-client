@@ -5,7 +5,8 @@ const BrandDetail = ({data}) => {
 const {_id,image,name,brandname,productType,price,rating,shortDescription} = data
 
     return (
-        <div>
+        <div> 
+            
             <div className="card w-[300px] h-[650px] bg-yellow-300 shadow-xl">
   <figure><img className="w-[90%] h-[200px] mt-[30px]" src={image} alt="" /></figure>
   <div className="card-body">
