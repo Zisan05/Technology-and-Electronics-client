@@ -7,7 +7,7 @@ const {_id,image,name,brandname,productType,price,rating,shortDescription} = dat
     return (
         <div> 
             
-            <div className="card w-[300px] h-[650px] bg-yellow-300 shadow-xl">
+            <div className="card w-[300px] md:w-[300px] lg:w-[400px] h-[650px] bg-yellow-300 shadow-xl">
   <figure><img className="w-[90%] h-[200px] mt-[30px]" src={image} alt="" /></figure>
   <div className="card-body">
     <h2 className="card-title">Name: {name}</h2>

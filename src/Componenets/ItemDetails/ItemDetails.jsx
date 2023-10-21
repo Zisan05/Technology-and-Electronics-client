@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../Provider/AuthProvider";
 
 
 const ItemDetails = () => {
 
     const loadData = useLoaderData()
 
+    const {user} = useContext(AuthContext)
+
     const {_id,image,name,brandname,productType,price,rating,shortDescription} = loadData;
 
     const handleAddCard = () =>{
+        const curUser = user.email;
           const image = loadData.image
           const name = loadData.name
           const brandname = loadData.brandname
@@ -17,11 +22,11 @@ const ItemDetails = () => {
           const rating = loadData.rating
           const shortDescription = loadData.shortDescription
          const NewUser = {
-            image,name,brandname,productType,price,rating,shortDescription
+            image,curUser,name,brandname,productType,price,rating,shortDescription
             
          }
 
-        fetch('http://localhost:5000/card',{
+        fetch('https://technology-electronic-server.vercel.app/card',{
             method:'POST',
             headers: {
                 'content-type': "application/json"

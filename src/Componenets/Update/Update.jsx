@@ -20,7 +20,7 @@ const Update = () => {
    
        
         console.log(UpdateUser)
-        fetch(`http://localhost:5000/tech/${_id}`,{
+        fetch(`https://technology-electronic-server.vercel.app/tech/${_id}`,{
                method:'PUT',
                headers: {
                    'content-type': "application/json"
@@ -36,7 +36,7 @@ const Update = () => {
                        'Successfully Update Your Item',
                        'success'
                      )
-                     form.reset();
+                     
                }
            })
        }

@@ -5,7 +5,7 @@ const AddCards = ({data,setProduct,product}) => {
     const {_id,image,name,brandname,productType,price,rating,shortDescription} = data;
 
     const handleDelete = (id) => {
-     fetch(`http://localhost:5000/card/${id}`,{
+     fetch(`https://technology-electronic-server.vercel.app/card/${id}`,{
       method: 'DELETE'
      })
      .then (res => res.json())

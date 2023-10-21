@@ -2,11 +2,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
 
-const {CreateUser} = useContext(AuthContext);
+const {CreateUser,UpdateProfile} = useContext(AuthContext);
 
 const [ErrorMsg , setErrorMsg] = useState('') 
 
@@ -46,6 +47,13 @@ const handleRegister = e => {
      
    CreateUser(email,password)
    .then(result => {
+    UpdateProfile(name,photo)
+    .then(() => {
+
+    })
+    .catch(error => {
+        console.log(error)
+    })
     navigate(location?.state ? location.state : "/");
     console.log(result.user)
     Swal.fire(

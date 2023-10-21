@@ -19,7 +19,7 @@ const AddProduct = () => {
 
     
      console.log(NewUser)
-     fetch('http://localhost:5000/tech',{
+     fetch('https://technology-electronic-server.vercel.app/tech',{
             method:'POST',
             headers: {
                 'content-type': "application/json"

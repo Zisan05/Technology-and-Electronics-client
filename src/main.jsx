@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element:<Home></Home>,
-        loader: () => fetch('brand.json')
+        loader: () => fetch('/brand.json')
       },
       {
         path: "/addproduct",
@@ -41,12 +41,12 @@ const router = createBrowserRouter([
       {
         path: "/branddetails/:brandname",
         element:<BrandDetails></BrandDetails>,
-        loader: () => fetch('http://localhost:5000/tech')
+        loader: () => fetch('https://technology-electronic-server.vercel.app/tech')
       },
       {
         path: "/itemdetails/:_id",
         element: <ItemDetails></ItemDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/tech/${params._id}`)
+        loader: ({params}) => fetch(`https://technology-electronic-server.vercel.app/tech/${params._id}`)
 
       },
       {
@@ -60,12 +60,12 @@ const router = createBrowserRouter([
       {
         path: "/addcard",
         element:<Privet><AddCard></AddCard></Privet>,
-        loader: () => fetch('http://localhost:5000/card')
+        loader: () => fetch('https://technology-electronic-server.vercel.app/card')
       },
       {
         path: "/update/:id",
         element:<Privet><Update></Update></Privet>,
-        loader: ({params}) => fetch(`http://localhost:5000/tech/${params.id}`)
+        loader: ({params}) => fetch(`https://technology-electronic-server.vercel.app/tech/${params.id}`)
       }
     ]
   },
